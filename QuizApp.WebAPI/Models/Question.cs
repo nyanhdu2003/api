@@ -14,4 +14,7 @@ public class Question
     [Required]
     [EnumDataType(typeof(QuestionType))]
     public required string QuestionType { get; set; }
+
+    [Required]
+    public required bool IsActive { get; set; } = true;
 }

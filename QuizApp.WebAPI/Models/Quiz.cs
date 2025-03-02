@@ -20,4 +20,7 @@ public class Quiz
 
     [StringLength(500)]
     public string? ThumbnailUrl { get; set; }
+
+    [Required]
+    public required bool IsActive { get; set; } = true;
 }

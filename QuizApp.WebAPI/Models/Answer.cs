@@ -13,4 +13,7 @@ public class Answer
 
     [Required]
     public required bool IsCorrect { get; set; } = false;
+
+    [Required]
+    public required bool IsActive { get; set; } = true;
 }
