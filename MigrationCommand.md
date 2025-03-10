@@ -4,7 +4,7 @@
 
 ### Add a migration
 ```bash
-dotnet ef migrations add AddCoreModels --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext --output-dir Migrations
+dotnet ef migrations add AddAllModelsAndConfigRelationship --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext --output-dir Migrations
 dotnet ef migrations add [MigrationName] --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext --output-dir Migrations/Storage
 ```
 
@@ -14,21 +14,17 @@ dotnet ef database update --project QuizApp.WebAPI --startup-project QuizApp.Web
 dotnet ef database update --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext
 ```
 
-### Roll back a migration
-```bash
-dotnet ef database update [MigrationName] --project QuizApp.Data --startup-project QuizApp.WebAPI --context QuizAppDbContext
-dotnet ef database update [MigrationName] --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext
-```
-
+### Roll Back a migration
+dotnet ef database update AddAdditionalModels --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext
 ### Drop the database
 ```bash
-dotnet ef database drop --project QuizApp.Data --startup-project QuizApp.WebAPI --context QuizAppDbContext
+dotnet ef database drop --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext
 dotnet ef database drop --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext
 ```
 
 ### Remove a migration
 ```bash
-dotnet ef migrations remove --project QuizApp.Data --startup-project QuizApp.WebAPI --context QuizAppDbContext
+dotnet ef migrations remove --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext
 dotnet ef migrations remove --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext
 ```
 

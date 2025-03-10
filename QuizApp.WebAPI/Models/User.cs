@@ -36,4 +36,10 @@ public class User : IdentityUser<Guid>
         }
         return ValidationResult.Success;
     }
+
+    // Relationship N:N with Role
+    public ICollection<Role> Roles { get; set; } = [];
+
+    // Relationship N:N with Quiz
+    public ICollection<UserQuiz> UserQuizzes { get; set; } = [];
 }

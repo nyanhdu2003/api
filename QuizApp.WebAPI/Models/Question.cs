@@ -17,4 +17,10 @@ public class Question
 
     [Required]
     public required bool IsActive { get; set; } = true;
+
+    // Question - Answer: 1:N 
+    public ICollection<Answer> Answers { get; set; } = [];
+
+    public ICollection<QuizQuestion> QuizQuestions { get; set; } = [];
+
 }

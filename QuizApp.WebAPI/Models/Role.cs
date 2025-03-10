@@ -11,4 +11,7 @@ public class Role : IdentityRole<Guid>
 
     [Required]
     public required bool IsActive { get; set; } = true;
+
+    // Relationship N:N with User
+    public ICollection<User> Users { get; set; } = [];
 }
