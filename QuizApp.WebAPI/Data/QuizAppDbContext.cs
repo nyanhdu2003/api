@@ -27,6 +27,12 @@ public class QuizAppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder); // Gọi phương thức gốc để đảm bảo các cấu hình cơ bản vẫn được áp dụng
 
+        modelBuilder.Entity<Answer>()
+            .HasOne(a => a.Question)
+            .WithMany(q => q.Answers)
+            .HasForeignKey(a => a.QuestionId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         // Cấu hình quan hệ Many-to-Many giữa User và Quiz thông qua UserQuiz
         modelBuilder.Entity<UserQuiz>()
             .HasKey(uc => new { uc.UserId, uc.QuizId }); // Định nghĩa Id là khóa chính của bảng UserQuiz

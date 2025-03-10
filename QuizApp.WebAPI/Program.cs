@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using QuizApp.WebAPI.Data;
+using QuizApp.WebAPI.SeedData;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,22 @@ builder.Services.AddDbContext<QuizAppDbContext>(options =>
 
 var app = builder.Build();
 
+// **🔹 Gọi SeedData để populate dữ liệu mẫu vào database**
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<QuizAppDbContext>();
+        await context.Database.MigrateAsync(); // Đảm bảo database được cập nhật schema mới nhất
+        await SeedData.InitializeAsync(services); // Thêm dữ liệu mẫu
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error seeding database: {ex.Message}");
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -24,30 +41,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+await app.RunAsync();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-
-app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
