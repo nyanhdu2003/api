@@ -28,6 +28,11 @@ public class QuizRepository : IQuizRepository
 
     public bool Delete(Quiz entity)
     {
+        if (entity == null)
+        {
+            return false; // Không có gì để xóa
+        }
+
         _context.Quizzes.Remove(entity);
         return _context.SaveChanges() > 0;
     }

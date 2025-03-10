@@ -23,4 +23,10 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QuizApp.Business\QuizApp.Business.csproj" />
+    <ProjectReference Include="..\QuizApp.Data\QuizApp.Data.csproj" />
+    <ProjectReference Include="..\QuizApp.Models\QuizApp.Models.csproj" />
+  </ItemGroup>
+
 </Project>

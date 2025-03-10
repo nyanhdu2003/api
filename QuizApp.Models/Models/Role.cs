@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using QuizApp.Models.Models;
 
 namespace QuizApp.WebAPI.Models;
 
-public class Role : IdentityRole<Guid>
+public class Role : IdentityRole<Guid>, IBaseEntity
 {
     [Required]
     [StringLength(50, MinimumLength = 3)]

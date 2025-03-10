@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
+using QuizApp.Models.Models;
 
 namespace QuizApp.WebAPI.Models;
 
-public class User : IdentityUser<Guid>
+public class User : IdentityUser<Guid>, IBaseEntity
 {
     [Required]
     [StringLength(50, MinimumLength = 3)]

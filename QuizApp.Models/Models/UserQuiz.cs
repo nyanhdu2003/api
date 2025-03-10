@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using QuizApp.Models.Models;
 
 namespace QuizApp.WebAPI.Models;
 
-public class UserQuiz
+public class UserQuiz : BaseEntity
 {
     [Required]
     [ForeignKey(nameof(User))]

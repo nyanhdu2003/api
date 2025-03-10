@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using QuizApp.Models.Models;
 
 namespace QuizApp.WebAPI.Models;
 
-public class UserAnswer
+public class UserAnswer : BaseEntity
 {
     [Required]
     public required Guid UserId { get; set; }

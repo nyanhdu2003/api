@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using QuizApp.Models.Models;
 
 namespace QuizApp.WebAPI.Models;
 
-public class QuizQuestion
+public class QuizQuestion : BaseEntity
 {
     [ForeignKey(nameof(Quiz))]
     public Guid QuizId { get; set; }

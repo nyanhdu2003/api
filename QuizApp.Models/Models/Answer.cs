@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using QuizApp.Models.Models;
 
 namespace QuizApp.WebAPI.Models;
 
-public class Answer
+public class Answer : IBaseEntity
 {
     [Required]
     public required Guid Id { get; set; } = Guid.NewGuid();
