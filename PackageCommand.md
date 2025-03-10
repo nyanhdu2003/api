@@ -11,8 +11,8 @@ dotnet add QuizApp.Business package Newtonsoft.Json
 # Add package for QuizApp.Data
 dotnet add QuizApp.Data package Microsoft.EntityFrameworkCore
 dotnet add QuizApp.Data package Microsoft.EntityFrameworkCore.SqlServer
-dotnet add QuizApp.Data package Microsoft.AspNetCore.Identity.EntityFrameworkCore
-dotnet add QuizApp.Data package Microsoft.AspNetCore.Identity
+dotnet add QuizApp.WebAPI package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+dotnet add QuizApp.WebAPI package Microsoft.AspNetCore.Identity
 
 # Add package for QuizApp.WebAPI
 dotnet add QuizApp.WebAPI package Microsoft.EntityFrameworkCore
