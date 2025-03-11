@@ -95,9 +95,29 @@ public class UnitOfWork : IUnitOfWork
     }
 
     // Giải phóng tài nguyên
+    private bool _disposed = false;
+    
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_disposed)
+        {
+            if (disposing)
+            {
+                _context.Dispose();
+                _transaction?.Dispose();
+            }
+            _disposed = true;
+        }
+    }
+    
     public void Dispose()
     {
-        _context.Dispose();
-        _transaction?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+    
+    ~UnitOfWork()
+    {
+        Dispose(false);
     }
 }

@@ -55,9 +55,16 @@ public class BaseService<T> : IBaseService<T> where T : class, IBaseEntity
         return await _genericRepository.GetAllAsync();
     }
 
-    public Task<PaginatedResult<T>> GetAsync(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, string includeProperties = "", int pageIndex = 1, int pageSize = 10)
+    // Truy vấn dữ liệu có phân trang, sắp xếp và điều kiện lọc
+    public async Task<PaginatedResult<T>> GetAsync(
+                Expression<Func<T, bool>>? filter = null,
+                Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+                string includeProperties = "",
+                int pageIndex = 1,
+                int pageSize = 10)
     {
-        throw new NotImplementedException();
+        var query = _genericRepository.Get(filter, orderBy, includeProperties);
+        return await PaginatedResult<T>.CreateAsync(query, pageIndex, pageSize);
     }
 
     public Task<T?> GetByIdAsync(Guid id)
@@ -65,8 +72,10 @@ public class BaseService<T> : IBaseService<T> where T : class, IBaseEntity
         return _genericRepository.GetByIdAsync(id);
     }
 
-    public Task<bool> UpdateAsync(T entity)
+    // Cập nhật entity
+    public async Task<bool> UpdateAsync(T entity)
     {
-        throw new NotImplementedException();
+        _genericRepository.Update(entity);
+        return await _unitOfWork.SaveChangesAsync() > 0;
     }
 }
