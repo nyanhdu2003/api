@@ -14,7 +14,7 @@ public class UnitOfWork : IUnitOfWork
     private readonly Dictionary<Type, object> _repositories = new();
 
     public UnitOfWork(QuizAppDbContext context)
-    {
+    {   
         _context = context;
 
         // Khởi tạo các repository cụ thể

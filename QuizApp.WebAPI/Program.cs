@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using QuizApp.Business.Services;
+using QuizApp.Data.Repositories;
 using QuizApp.WebAPI.Data;
 using QuizApp.WebAPI.SeedData;
 
@@ -14,6 +16,13 @@ builder.Services.AddDbContext<QuizAppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("QuizAppDbConnection"));
 });
+
+// Register Unit Of Work
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Register Service
+builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+
 
 var app = builder.Build();
 
