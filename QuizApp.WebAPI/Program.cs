@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 // Register DbContext 
 builder.Services.AddDbContext<QuizAppDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("QuizAppDbConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("QuizAppDbConnection"), b => b.MigrationsAssembly("QuizApp.Data"));
 });
 
 // Register Unit Of Work

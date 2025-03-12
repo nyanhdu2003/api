@@ -4,7 +4,7 @@
 
 ### Add a migration
 ```bash
-dotnet ef migrations add AddSeedingData --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext --output-dir Migrations
+dotnet ef migrations add AddUserSeedingData --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext --output-dir Migrations
 dotnet ef migrations add [MigrationName] --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext --output-dir Migrations/Storage
 ```
 
@@ -24,7 +24,7 @@ dotnet ef database drop --project QuizApp.Data --startup-project QuizApp.WebAPI 
 
 ### Remove a migration
 ```bash
-dotnet ef migrations remove --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext
+dotnet ef migrations remove --project QuizApp.Data --startup-project QuizApp.WebAPI --context QuizAppDbContext
 dotnet ef migrations remove --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext
 ```
 

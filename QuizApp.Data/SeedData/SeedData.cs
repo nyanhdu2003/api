@@ -1,3 +1,4 @@
+using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using QuizApp.WebAPI.Data;
@@ -24,6 +25,16 @@ namespace QuizApp.WebAPI.SeedData
                     return;
                 }
 
+                if (await context.Users.AnyAsync()) return;
+                // Tạo dữ liệu cho User
+                var users = new[]
+                {
+                new User { Id = Guid.NewGuid(), FirstName = "John", LastName = "Doe", DisplayName = "John Doe", Email = "john@example.com", UserName = "john.doe", DateOfBirth = new DateTime(2000, 1, 1), IsActive = true },
+                new User { Id = Guid.NewGuid(), FirstName = "Jane", LastName = "Smith", DisplayName = "Jane Smith", Email = "jane@example.com", UserName = "jane.smith", DateOfBirth = new DateTime(1998, 8, 15), IsActive = true }
+            };
+                await context.Users.AddRangeAsync(users);
+                await context.SaveChangesAsync();
+
                 // Tạo dữ liệu cho Quiz
                 var quizzes = new[]
                 {
@@ -47,7 +58,7 @@ namespace QuizApp.WebAPI.SeedData
                 };
                 await context.Questions.AddRangeAsync(questions);
                 await context.SaveChangesAsync();
-                
+
                 // Tạo dữ liệu cho Answer
                 var answers = new[]
                 {
