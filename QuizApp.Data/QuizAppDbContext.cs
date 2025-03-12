@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using QuizApp.Models.Models;
 using QuizApp.WebAPI.Models;
 
 namespace QuizApp.WebAPI.Data;
@@ -99,6 +100,24 @@ public class QuizAppDbContext : IdentityDbContext<User, Role, Guid>
             .HasOne(qq => qq.Question)
             .WithMany(q => q.QuizQuestions)
             .HasForeignKey(qq => qq.QuestionId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // Primary key for UserRoles
+        builder.Entity<UserRoles>()
+            .HasKey(x => new { x.UserId, x.RoleId });
+        
+        // Relationship Role - UserRoles: 1:N
+        builder.Entity<UserRoles>()
+            .HasOne(ur => ur.Role)
+            .WithMany(r => r.UserRoles)
+            .HasForeignKey(ur => ur.RoleId)
+            .OnDelete(DeleteBehavior.Cascade);
+            
+        // Relationship User - UserRoles: 1:N
+        builder.Entity<UserRoles>()
+            .HasOne(ur => ur.User)
+            .WithMany(u => u.UserRoles)
+            .HasForeignKey(ur => ur.UserId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

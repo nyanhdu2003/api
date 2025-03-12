@@ -5,6 +5,7 @@ namespace QuizApp.Models.Models;
 
 public class UserRoles
 {
+    
     public Guid UserId { get; set; }
     public User? User { get; set; }  // Navigation property
 

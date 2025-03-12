@@ -43,4 +43,7 @@ public class User : IdentityUser<Guid>, IBaseEntity
 
     // Relationship N:N with Quiz
     public ICollection<UserQuiz> UserQuizzes { get; set; } = [];
+
+    public ICollection<UserRoles>? UserRoles { get; set; }
+
 }
