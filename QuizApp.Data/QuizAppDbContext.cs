@@ -27,7 +27,8 @@ public class QuizAppDbContext : IdentityDbContext<User, Role, Guid>
     protected override void OnModelCreating(ModelBuilder builder) // Override phương thức cấu hình database khi tạo model
     {
         base.OnModelCreating(builder); // Gọi phương thức gốc để đảm bảo các cấu hình cơ bản vẫn được áp dụng
-                                       // Ngăn Identity đổi tên bảng mặc định
+        
+        // Ngăn Identity đổi tên bảng mặc định
         builder.Entity<User>().ToTable("Users");
         builder.Entity<Quiz>().ToTable("Quizzes");
         builder.Entity<Question>().ToTable("Questions");

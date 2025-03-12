@@ -16,5 +16,12 @@
   <ItemGroup>
     <ProjectReference Include="..\QuizApp.Models\QuizApp.Models.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Migrations\SeedUserQuizData.sql">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+</ItemGroup>
+
   
 </Project>

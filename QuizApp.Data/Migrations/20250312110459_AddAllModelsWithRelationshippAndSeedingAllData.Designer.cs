@@ -12,7 +12,7 @@ using QuizApp.WebAPI.Data;
 namespace QuizApp.Data.Migrations
 {
     [DbContext(typeof(QuizAppDbContext))]
-    [Migration("20250312102701_AddAllModelsWithRelationshippAndSeedingAllData")]
+    [Migration("20250312110459_AddAllModelsWithRelationshippAndSeedingAllData")]
     partial class AddAllModelsWithRelationshippAndSeedingAllData
     {
         /// <inheritdoc />
