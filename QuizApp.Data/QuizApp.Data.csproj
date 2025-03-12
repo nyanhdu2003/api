@@ -21,7 +21,7 @@
     <None Update="Migrations\SeedUserQuizData.sql">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-</ItemGroup>
+  </ItemGroup>
 
   
 </Project>

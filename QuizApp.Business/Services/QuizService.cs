@@ -53,4 +53,42 @@ public class QuizService
 
         return quiz;
     }
+
+    /// <summary>
+    /// Get quiz information for user to take the quiz
+    /// </summary>
+    /// <param name="model"></param>
+    /// <returns></returns>
+    public async Task<QuizForTestViewModel> TakeQuizAsync(TakeQuizViewModel model)
+    {
+        var quiz = await _context.Quizzes
+            .Where(q => q.Id == model.QuizId)
+            .Select(q => new QuizForTestViewModel
+            {
+                Id = q.Id,
+                Title = q.Title,
+                Description = q.Description,
+                QuizCode = _context.UserQuizzes
+                    .Where(uq => uq.QuizId == model.QuizId && uq.UserId == model.UserId)
+                    .Select(uq => uq.QuizCode)
+                    .FirstOrDefault(),
+                StartTime = DateTime.UtcNow,
+                Duration = q.Duration,
+                Questions = q.QuizQuestions
+                    .Select(qq => new QuestionForTestViewModel
+                    {
+                        Id = qq.Question.Id,
+                        Content = qq.Question.Content,
+                        QuestionType = qq.Question.QuestionType,
+                        Answers = qq.Question.Answers
+                            .Select(a => new AnswerForTestViewModel
+                            {
+                                Id = a.Id,
+                                Content = a.Content
+                            }).ToList()
+                    }).ToList()
+            })
+            .FirstOrDefaultAsync();
+        return quiz!;
+    }
 }
