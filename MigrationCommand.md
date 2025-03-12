@@ -4,7 +4,7 @@
 
 ### Add a migration
 ```bash
-dotnet ef migrations add AddUserSeedingData --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext --output-dir Migrations
+dotnet ef migrations add AddUserRoleModel --project QuizApp.WebAPI --startup-project QuizApp.WebAPI --context QuizAppDbContext --output-dir Migrations
 dotnet ef migrations add [MigrationName] --project QuizApp.Data --startup-project QuizApp.WebAPI --context StorageDbContext --output-dir Migrations/Storage
 ```
 

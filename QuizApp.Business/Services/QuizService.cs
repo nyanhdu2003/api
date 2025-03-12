@@ -5,7 +5,7 @@ using QuizApp.WebAPI.Models;
 
 namespace QuizApp.Business.Services;
 
-public class QuizService
+public class QuizService : IQuizService
 {
     private readonly QuizAppDbContext _context;
 
