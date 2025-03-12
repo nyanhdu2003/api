@@ -15,4 +15,6 @@ public class Role : IdentityRole<Guid>, IBaseEntity
 
     // Relationship N:N with User
     public ICollection<User> Users { get; set; } = [];
+
+    public ICollection<UserRoles>? UserRoles { get; set; }
 }
