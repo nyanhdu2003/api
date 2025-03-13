@@ -110,5 +110,46 @@ namespace QuizApp.Tests
                 IsActive = true
             };
         }
+
+        // Test xóa User dẫn đến xóa UserQuiz (Cascade Delete)
+        [Test]
+        public async Task CascadeDelete_User_Should_Remove_UserQuiz()
+        {
+            var user = new User { Id = Guid.NewGuid(), UserName = "testuser", FirstName = "Test", LastName = "User", DisplayName = "Test User", DateOfBirth = DateTime.Now, IsActive = true };
+            var quiz = CreateSampleQuiz();
+
+            _context.Users.Add(user);
+            _context.Quizzes.Add(quiz);
+            await _context.SaveChangesAsync();
+
+            var userQuiz = new UserQuiz { UserId = user.Id, QuizId = quiz.Id, QuizCode = "123456" };
+            _context.UserQuizzes.Add(userQuiz);
+            await _context.SaveChangesAsync();
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            var userQuizAfterDelete = await _context.UserQuizzes.FirstOrDefaultAsync(uq => uq.UserId == user.Id);
+            Assert.That(userQuizAfterDelete, Is.Null);
+        }
+
+        // Test tạo quan hệ Many-to-Many giữa User và Quiz
+        [Test]
+        public async Task AddUserQuiz_Should_Create_ManyToMany_Relationship()
+        {
+            var user = new User { Id = Guid.NewGuid(), UserName = "testuser2", FirstName = "Test", LastName = "User", DisplayName = "Test User 2", DateOfBirth = DateTime.Now, IsActive = true };
+            var quiz = CreateSampleQuiz();
+
+            _context.Users.Add(user);
+            _context.Quizzes.Add(quiz);
+            await _context.SaveChangesAsync();
+
+            var userQuiz = new UserQuiz { UserId = user.Id, QuizId = quiz.Id, QuizCode = "132356" };
+            _context.UserQuizzes.Add(userQuiz);
+            await _context.SaveChangesAsync();
+
+            var result = await _context.UserQuizzes.FirstOrDefaultAsync(uq => uq.UserId == user.Id && uq.QuizId == quiz.Id);
+            Assert.That(result, Is.Not.Null);
+        }
     }
 }
