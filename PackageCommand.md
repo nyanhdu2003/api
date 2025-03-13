@@ -33,5 +33,9 @@ dotnet add QuizApp.WebAPI package Serilog
 dotnet add QuizApp.WebAPI package Serilog.AspNetCore
 dotnet add QuizApp.WebAPI package Serilog.Sinks.Console
 dotnet add QuizApp.WebAPI package Serilog.Sinks.File
+dotnet add QuizApp.WebAPI package NUnit
+dotnet add QuizApp.WebAPI package Moq
+dotnet add QuizApp.WebAPI package Microsoft.EntityFrameworkCore.InMemory
+
 
 
