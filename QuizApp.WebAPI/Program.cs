@@ -5,6 +5,7 @@ using QuizApp.Data.Repositories;
 using QuizApp.WebAPI.Data;
 using QuizApp.WebAPI.Models;
 using QuizApp.WebAPI.SeedData;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,15 @@ builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddIdentity<User, Role>()
     .AddEntityFrameworkStores<QuizAppDbContext>()
     .AddDefaultTokenProviders();
+
+// Cấu hình Serilog
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/quizapp-log.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog();
 
 
 var app = builder.Build();

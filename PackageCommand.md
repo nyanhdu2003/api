@@ -29,3 +29,9 @@ dotnet add QuizApp.WebAPI package Swashbuckle.AspNetCore.Swagger
 dotnet add QuizApp.WebAPI package Swashbuckle.AspNetCore.SwaggerGen
 dotnet add QuizApp.WebAPI package Swashbuckle.AspNetCore.SwaggerUI
 dotnet add QuizApp.WebAPI package Microsoft.Extensions.Configuration
+dotnet add QuizApp.WebAPI package Serilog
+dotnet add QuizApp.WebAPI package Serilog.AspNetCore
+dotnet add QuizApp.WebAPI package Serilog.Sinks.Console
+dotnet add QuizApp.WebAPI package Serilog.Sinks.File
+
+
