@@ -32,6 +32,9 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 
+// Register Service for Quesion
+builder.Services.AddScoped<IQuestionService, QuestionService>();
+
 // Config Identity 
 builder.Services.AddIdentity<User, Role>()
     .AddEntityFrameworkStores<QuizAppDbContext>()
