@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using QuizApp.Business.Services;
 using QuizApp.Business.ViewModels;
 using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
-
 [Route("api/[controller]")]
 [ApiController]
 public class QuizController : ControllerBase
