@@ -32,7 +32,7 @@ public class QuizService : IQuizService
             {
                 Id = q.Id,
                 Title = q.Title,
-                Description = q.Description,
+                Description = q.Description ?? string.Empty,
                 Duration = q.Duration,
                 ThumbnailUrl = q.ThumbnailUrl,
                 QuizCode = prepareQuizViewModel.QuizCode,
@@ -190,7 +190,7 @@ public class QuizService : IQuizService
     /// <param name="model"></param>
     /// <returns></returns>
     public async Task<QuizResultViewModel> GetQuizResultAsync(GetQuizResultViewModel model)
-    {   
+    {
         _logger.LogInformation("Getting quiz result for quiz {QuizId} and user {UserId}", model.QuizId, model.UserId);
 
         var totalQuestions = await _context.QuizQuestions
@@ -218,4 +218,135 @@ public class QuizService : IQuizService
             Score = score
         };
     }
+
+    public async Task<QuizViewModel> GetQuizByIdAsync(Guid id)
+    {
+        _logger.LogInformation("Fetching quiz details for ID: {QuizId}", id);
+
+        var quiz = await _context.Quizzes
+            .Where(q => q.Id == id)
+            .Select(q => new QuizViewModel
+            {
+                Id = q.Id,
+                Title = q.Title,
+                Description = q.Description ?? string.Empty,
+                Duration = q.Duration,
+                IsActive = q.IsActive
+            })
+            .FirstOrDefaultAsync();
+        if (quiz == null)
+        {
+            _logger.LogError("Quiz not found for ID: {QuizId}", id);
+            throw new QuizNotFoundException("Quiz not found.");
+        }
+        return quiz;
+    }
+
+    public async Task<List<QuizViewModel>> GetAllQuizzesAsync()
+    {
+        _logger.LogInformation("Fetching all quizzes");
+
+        return await _context.Quizzes
+            .Select(q => new QuizViewModel
+            {
+                Id = q.Id,
+                Title = q.Title,
+                Description = q.Description ?? string.Empty,
+                Duration = q.Duration,
+                IsActive = q.IsActive
+            })
+            .ToListAsync();
+    }
+
+    public async Task<bool> CreateQuizWithQuestionsAsync(QuizCreateViewModel model)
+    {
+        var quiz = new Quiz
+        {
+            Id = Guid.NewGuid(),
+            Title = model.Title,
+            Duration = model.Duration,
+            IsActive = model.IsActive,
+        };
+
+        _context.Quizzes.Add(quiz);
+        return await _context.SaveChangesAsync() > 0;
+    }
+
+    public async Task<bool> DeleteQuizAsync(Guid id)
+    {
+        var quiz = await _context.Quizzes
+            .FirstOrDefaultAsync(q => q.Id == id);
+
+        if (quiz == null)
+        {
+            return false;
+        }
+
+        _context.Quizzes.Remove(quiz);
+
+        return await _context.SaveChangesAsync() > 0;
+    }
+
+    public async Task<bool> UpdateQuizWithQuestionsAsync(Guid id, QuizEditViewModel model)
+    {
+        // Tìm quiz cần cập nhật
+        var quiz = await _context.Quizzes
+            .Include(q => q.QuizQuestions)
+            .FirstOrDefaultAsync(q => q.Id == id);
+
+        if (quiz == null)
+        {
+            _logger.LogError("Quiz not found with ID: {QuizId}", id);
+            return false;
+        }
+
+        // Cập nhật thông tin quiz
+        quiz.Title = model.Title;
+        quiz.Description = model.Description;
+        quiz.Duration = model.Duration;
+        quiz.IsActive = model.IsActive;
+
+        // Lấy danh sách QuizQuestions hiện có
+        var existingQuizQuestions = quiz.QuizQuestions.ToList();
+
+        // Nếu có danh sách câu hỏi mới
+        if (model.QuestionIdWithOrders != null && model.QuestionIdWithOrders.Count > 0)
+        {
+            // Xóa danh sách câu hỏi cũ
+            _context.QuizQuestions.RemoveRange(existingQuizQuestions);
+
+            var newQuizQuestions = new List<QuizQuestion>();
+
+            foreach (var item in model.QuestionIdWithOrders)
+            {
+                // Lấy đối tượng Question từ database
+                var question = await _context.Questions
+                    .FirstOrDefaultAsync(q => q.Id == item.QuestionId);
+
+                if (question == null)
+                {
+                    _logger.LogWarning("Question ID {QuestionId} does not exist", item.QuestionId);
+                    continue; // Bỏ qua câu hỏi không tồn tại
+                }
+
+                newQuizQuestions.Add(new QuizQuestion
+                {
+                    QuizId = id,
+                    Quiz = quiz, // Bổ sung Quiz object
+                    QuestionId = item.QuestionId,
+                    Question = question, // Bổ sung Question object
+                    Order = item.Order
+                });
+            }
+
+            // Thêm danh sách mới vào database
+            await _context.QuizQuestions.AddRangeAsync(newQuizQuestions);
+        }
+
+        // Lưu thay đổi vào database
+        await _context.SaveChangesAsync();
+        _logger.LogInformation("Quiz {QuizId} updated successfully", id);
+        return true;
+    }
+
 }
