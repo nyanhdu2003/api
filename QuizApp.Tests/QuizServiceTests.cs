@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NUnit.Framework;
 using QuizApp.WebAPI.Data;
 using QuizApp.WebAPI.Models;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuizApp.Tests
 {
@@ -122,7 +118,7 @@ namespace QuizApp.Tests
             _context.Quizzes.Add(quiz);
             await _context.SaveChangesAsync();
 
-            var userQuiz = new UserQuiz { UserId = user.Id, QuizId = quiz.Id, QuizCode = "123456" };
+            var userQuiz = new UserQuizz { UserId = user.Id, QuizId = quiz.Id, QuizCode = "123456" };
             _context.UserQuizzes.Add(userQuiz);
             await _context.SaveChangesAsync();
 
@@ -144,7 +140,7 @@ namespace QuizApp.Tests
             _context.Quizzes.Add(quiz);
             await _context.SaveChangesAsync();
 
-            var userQuiz = new UserQuiz { UserId = user.Id, QuizId = quiz.Id, QuizCode = "132356" };
+            var userQuiz = new UserQuizz { UserId = user.Id, QuizId = quiz.Id, QuizCode = "132356" };
             _context.UserQuizzes.Add(userQuiz);
             await _context.SaveChangesAsync();
 

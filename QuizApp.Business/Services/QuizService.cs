@@ -19,55 +19,6 @@ public class QuizService : IQuizService
         _logger = logger;
     }
 
-    /// <summary>
-    /// Lấy thông tin bài quiz cho user
-    /// </summary>
-    public async Task<QuizPrepareInfoViewModel?> PrepareQuizForUserAsync(PrepareQuizViewModel prepareQuizViewModel)
-    {
-        _logger.LogInformation("Preparing quiz for user {UserId}", prepareQuizViewModel.UserId);
-
-        var quiz = await _context.Quizzes
-            .Where(q => q.Id == prepareQuizViewModel.QuizId)
-            .Select(q => new QuizPrepareInfoViewModel
-            {
-                Id = q.Id,
-                Title = q.Title,
-                Description = q.Description ?? string.Empty,
-                Duration = q.Duration,
-                ThumbnailUrl = q.ThumbnailUrl,
-                QuizCode = prepareQuizViewModel.QuizCode,
-                User = _context.Users
-                    .Where(u => u.Id == prepareQuizViewModel.UserId)
-                    .Select(u => new UserViewModel
-                    {
-                        Id = u.Id,
-                        FirstName = u.FirstName,
-                        LastName = u.LastName,
-                        DisplayName = u.DisplayName,
-                        Email = u.Email,
-                        UserName = u.UserName,
-                        PhoneNumber = u.PhoneNumber,
-                        DateOfBirth = u.DateOfBirth,
-                        Avatar = u.Avatar,
-                        IsActive = u.IsActive,
-                        Roles = _context.Roles
-                            .Where(r => r.UserRoles != null && r.UserRoles.Any(ur => ur.UserId == u.Id))
-                            .Select(r => r.Name)
-                            .ToList()
-                    })
-                    .FirstOrDefault()
-            })
-            .FirstOrDefaultAsync();
-
-        // Check if quiz is not found
-        if (quiz == null)
-        {
-            _logger.LogError("Quiz not found for ID: {QuizId}", prepareQuizViewModel.QuizId);
-            throw new QuizNotFoundException("Quiz not found.");
-        }
-
-        return quiz;
-    }
 
     /// <summary>
     /// Get quiz information for user to take the quiz
@@ -170,7 +121,6 @@ public class QuizService : IQuizService
             {
                 UserId = model.UserId,
                 QuizId = model.QuizId,
-                UserQuizId = userQuiz.Id,
                 QuestionId = answer.QuestionId,
                 AnswerId = answer.AnswerId,
                 IsCorrect = isCorrect
@@ -264,11 +214,26 @@ public class QuizService : IQuizService
         {
             Id = Guid.NewGuid(),
             Title = model.Title,
+            Description = model.Description,
             Duration = model.Duration,
             IsActive = model.IsActive,
         };
 
-        _context.Quizzes.Add(quiz);
+        await _context.Quizzes.AddAsync(quiz);
+
+        foreach (var question in model.QuestionIdWithOrders)
+        {
+            var quizQuestions = new QuizQuestion
+            {
+                Id = Guid.NewGuid(),
+                QuizId = quiz.Id,
+                QuestionId = question.QuestionId,
+                Order = question.Order
+            };
+
+            await _context.AddAsync(quizQuestions);
+        }
+
         return await _context.SaveChangesAsync() > 0;
     }
 
@@ -344,9 +309,149 @@ public class QuizService : IQuizService
         }
 
         // Lưu thay đổi vào database
-        await _context.SaveChangesAsync();
         _logger.LogInformation("Quiz {QuizId} updated successfully", id);
-        return true;
+        return await _context.SaveChangesAsync() > 0;
     }
+
+    public async Task<bool> AddQuestionToQuiz(QuizQuestionCreateViewModel model)
+    {
+        var quiz = await _context.Quizzes.FirstOrDefaultAsync(q => q.Id == model.QuizId);
+
+        if (quiz == null)
+        {
+            System.Console.WriteLine("No quiz found");
+            return false;
+        }
+
+        var question = await _context.Questions.FirstOrDefaultAsync(q => q.Id == model.QuestionId);
+
+        if (question == null)
+        {
+            System.Console.WriteLine("No question found");
+            return false;
+        }
+
+        var newQuestion = new QuizQuestion
+        {
+            Id = Guid.NewGuid(),
+            QuizId = quiz.Id,
+            QuestionId = question.Id,
+            Quiz = quiz,
+            Question = question,
+            Order = model.Order
+        };
+
+        await _context.QuizQuestions.AddAsync(newQuestion);
+        return await _context.SaveChangesAsync() > 0;
+    }
+
+    public async Task<bool> DeleteQuestionFromQuiz(Guid id, Guid questionId)
+    {
+        // Tìm xem câu hỏi có tồn tại hay không
+        var quiz = await _context.Quizzes
+            .Include(q => q.QuizQuestions)
+            .FirstOrDefaultAsync(q => q.Id == id);
+
+        if (quiz == null)
+        {
+            System.Console.WriteLine("No quiz found");
+            return false;
+        }
+
+        // Tìm câu hỏi cần xóa khỏi quiz
+        var quizQuestion = await _context.QuizQuestions
+            .FirstOrDefaultAsync(qq => qq.QuizId == id && qq.QuestionId == questionId);
+
+        if (quizQuestion == null)
+        {
+            System.Console.WriteLine("No questions found in this quiz");
+            return false;
+        }
+
+        // Xóa quan hệ giữa quiz và question
+        _context.QuizQuestions.Remove(quizQuestion);
+
+        // Lưu thay đổi vào database 
+        return await _context.SaveChangesAsync() > 0;
+    }
+
+   public async Task<QuizPrepareInfoViewModel?> PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel)
+{
+    _logger.LogInformation("Preparing quiz for user: {UserId}, Quiz: {QuizId}", prepareQuizViewModel.UserId, prepareQuizViewModel.QuizId);
+
+    // Kiểm tra đầu vào
+    if (prepareQuizViewModel.QuizId == Guid.Empty ||
+        prepareQuizViewModel.UserId == Guid.Empty ||
+        string.IsNullOrWhiteSpace(prepareQuizViewModel.QuizCode))
+    {
+        _logger.LogWarning("Invalid request data.");
+        return null;
+    }
+
+    // Tìm quiz trong database
+    var quiz = await _context.Quizzes.FindAsync(prepareQuizViewModel.QuizId);
+    if (quiz == null)
+    {
+        _logger.LogWarning("Quiz {QuizId} not found.", prepareQuizViewModel.QuizId);
+        return null;
+    }
+
+    // Tìm user trong database
+    var user = await _context.Users.FindAsync(prepareQuizViewModel.UserId);
+    if (user == null)
+    {
+        _logger.LogWarning("User {UserId} not found.", prepareQuizViewModel.UserId);
+        return null;
+    }
+
+    // Kiểm tra xem UserQuiz đã tồn tại chưa
+    var existingEntry = await _context.UserQuizzes
+        .FirstOrDefaultAsync(uq => uq.UserId == user.Id && uq.QuizId == quiz.Id);
+
+    if (existingEntry == null) // Chỉ thêm nếu chưa có
+    {
+        var userQuiz = new UserQuizz
+        {
+            Id = Guid.NewGuid(),
+            UserId = user.Id,
+            QuizId = quiz.Id,
+            QuizCode = prepareQuizViewModel.QuizCode,
+            StartAt = DateTime.UtcNow
+        };
+
+        _context.UserQuizzes.Add(userQuiz);
+        await _context.SaveChangesAsync();
+    }
+
+    // Chuẩn bị dữ liệu phản hồi
+    var response = new QuizPrepareInfoViewModel
+    {
+        Id = quiz.Id,
+        Title = quiz.Title,
+        Description = quiz.Description ?? string.Empty,
+        Duration = quiz.Duration,
+        ThumbnailUrl = quiz.ThumbnailUrl,
+        QuizCode = prepareQuizViewModel.QuizCode,
+        User = new UserViewModel
+        {
+            Id = user.Id,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Email = user.Email,
+            DisplayName = user.DisplayName,
+            PhoneNumber = user.PhoneNumber,
+            DateOfBirth = user.DateOfBirth,
+            Avatar = user.Avatar,
+            IsActive = user.IsActive,
+            Roles = await _context.Roles
+                .Where(r => r.UserRoles != null && r.UserRoles.Any(ur => ur.UserId == user.Id))
+                .Select(r => r.Name)
+                .ToListAsync()
+        }
+    };
+
+    _logger.LogInformation("Quiz {QuizId} prepared successfully for user {UserId}.", prepareQuizViewModel.QuizId, prepareQuizViewModel.UserId);
+    return response;
+}
 
 }

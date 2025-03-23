@@ -14,7 +14,7 @@ public interface IUnitOfWork : IDisposable
 
     IGenericRepository<Question> QuestionRepository { get; }
 
-    IGenericRepository<UserQuiz> UserQuizRepository { get; }
+    IGenericRepository<UserQuizz> UserQuizRepository { get; }
 
     IGenericRepository<QuizQuestion> QuizQuestionRepository { get; }
 

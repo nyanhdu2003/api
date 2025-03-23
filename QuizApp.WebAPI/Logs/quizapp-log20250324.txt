@@ -1,0 +1,1309 @@
+2025-03-24 00:02:49.751 +07:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:02:49.833 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:02:49.879 +07:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:02:49.975 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:02:49.999 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:02:50.002 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:02:50.034 +07:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:02:50.049 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:02:50.060 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:02:50.150 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:02:50.150 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:02:50.152 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:02:50.158 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:02:50.161 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:02:50.163 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:02:50.166 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:02:50.167 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:02:50.169 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:02:50.502 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Quizzes] AS [q]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-03-24 00:02:50.640 +07:00 [INF] User profile is available. Using 'C:\Users\hungp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-24 00:02:50.794 +07:00 [INF] Now listening on: http://localhost:5269
+2025-03-24 00:02:50.799 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-24 00:02:50.800 +07:00 [INF] Hosting environment: Development
+2025-03-24 00:02:50.800 +07:00 [INF] Content root path: C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI
+2025-03-24 00:02:51.157 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:02:51.659 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 508.4673ms
+2025-03-24 00:02:51.716 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:02:51.720 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 3.5325ms
+2025-03-24 00:02:51.721 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:02:51.751 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 29.7449ms
+2025-03-24 00:02:53.930 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:02:54.181 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 250.6359ms
+2025-03-24 00:03:18.365 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:03:18.366 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.2631ms
+2025-03-24 00:03:18.387 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:03:18.388 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.9221ms
+2025-03-24 00:03:18.395 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:03:18.396 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.5236ms
+2025-03-24 00:03:18.970 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:03:18.986 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.0376ms
+2025-03-24 00:03:23.619 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:03:23.624 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 5.4835ms
+2025-03-24 00:03:23.657 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:03:23.658 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 1.2113ms
+2025-03-24 00:03:23.659 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:03:23.659 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.2868ms
+2025-03-24 00:03:24.884 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:03:24.922 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 36.9396ms
+2025-03-24 00:03:30.110 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:03:30.112 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.8064ms
+2025-03-24 00:03:30.130 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:03:30.131 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.9418ms
+2025-03-24 00:03:30.132 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:03:30.147 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 14.3237ms
+2025-03-24 00:03:31.276 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:03:31.287 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.2766ms
+2025-03-24 00:04:49.815 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - application/json 95
+2025-03-24 00:04:49.818 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-03-24 00:04:49.822 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:04:49.823 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:04:49.823 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - 405 0 null 8.1346ms
+2025-03-24 00:05:33.055 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:05:33.057 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.8852ms
+2025-03-24 00:05:33.099 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:05:33.100 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 1.0194ms
+2025-03-24 00:05:33.109 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:05:33.109 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.5904ms
+2025-03-24 00:05:36.296 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:05:36.323 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.8495ms
+2025-03-24 00:06:27.881 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - application/json 130
+2025-03-24 00:06:27.882 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:06:27.882 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:06:27.882 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - 405 0 null 0.8544ms
+2025-03-24 00:09:30.128 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:09:30.129 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 0.7054ms
+2025-03-24 00:09:30.131 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:09:30.133 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.7782ms
+2025-03-24 00:09:30.162 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:09:30.162 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.6465ms
+2025-03-24 00:09:30.164 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:09:30.164 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.2635ms
+2025-03-24 00:09:31.852 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:09:31.857 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST prepareQuizForUser " for actions - QuizApp.WebAPI.Controllers.QuizController.PrepareQuiz (QuizApp.WebAPI), QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 2.0 and 3.0. Use ConflictingActionsResolver as a workaround or provide your own implementation of PathGroupSelector.
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.PrepareGenerateOperation(IGrouping`2 group)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 00:09:31.872 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 19.2554ms
+2025-03-24 00:09:42.303 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:09:42.304 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 0.5585ms
+2025-03-24 00:09:42.320 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:09:42.320 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.6859ms
+2025-03-24 00:09:42.328 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:09:42.328 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.2529ms
+2025-03-24 00:09:42.602 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:09:42.605 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST prepareQuizForUser " for actions - QuizApp.WebAPI.Controllers.QuizController.PrepareQuiz (QuizApp.WebAPI), QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 2.0 and 3.0. Use ConflictingActionsResolver as a workaround or provide your own implementation of PathGroupSelector.
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.PrepareGenerateOperation(IGrouping`2 group)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 00:09:42.607 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 4.864ms
+2025-03-24 00:09:47.261 +07:00 [INF] Application is shutting down...
+2025-03-24 00:10:18.297 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:10:18.342 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:10:18.371 +07:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:10:18.436 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:10:18.450 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:10:18.451 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:10:18.460 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:10:18.469 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:10:18.475 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:10:18.533 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:10:18.533 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:10:18.536 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:10:18.540 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:10:18.542 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:10:18.543 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:10:18.545 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:10:18.545 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:10:18.548 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:10:18.757 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Quizzes] AS [q]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-03-24 00:10:18.876 +07:00 [INF] User profile is available. Using 'C:\Users\hungp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-24 00:10:18.970 +07:00 [INF] Now listening on: http://localhost:5269
+2025-03-24 00:10:18.973 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-24 00:10:18.974 +07:00 [INF] Hosting environment: Development
+2025-03-24 00:10:18.974 +07:00 [INF] Content root path: C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI
+2025-03-24 00:10:19.206 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:10:19.428 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 225.8634ms
+2025-03-24 00:10:19.455 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:10:19.455 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:10:19.458 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 3.6146ms
+2025-03-24 00:10:19.463 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 7.5974ms
+2025-03-24 00:10:21.332 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:10:21.531 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 198.969ms
+2025-03-24 00:11:04.863 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - application/json 132
+2025-03-24 00:11:04.864 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-03-24 00:11:04.893 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:11:04.894 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:11:04.895 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - 405 0 null 32.1278ms
+2025-03-24 00:15:14.156 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:15:14.158 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.6113ms
+2025-03-24 00:15:14.207 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:15:14.208 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.9031ms
+2025-03-24 00:15:14.242 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:15:14.242 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.7534ms
+2025-03-24 00:15:15.697 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:15:15.713 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.1304ms
+2025-03-24 00:16:29.068 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:16:29.073 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 4.5063ms
+2025-03-24 00:16:29.100 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:16:29.101 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.8156ms
+2025-03-24 00:16:29.107 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:16:29.107 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.443ms
+2025-03-24 00:16:30.641 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:16:30.661 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.21ms
+2025-03-24 00:17:38.326 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - application/json 130
+2025-03-24 00:17:38.328 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:17:38.328 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:17:38.328 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - 405 0 null 2.2278ms
+2025-03-24 00:18:11.503 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:18:11.507 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 4.1606ms
+2025-03-24 00:18:11.542 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:18:11.543 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.7093ms
+2025-03-24 00:18:11.547 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:18:11.558 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 10.545ms
+2025-03-24 00:18:12.975 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:18:12.987 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.8443ms
+2025-03-24 00:18:24.630 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:18:24.632 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.6846ms
+2025-03-24 00:18:24.650 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:18:24.652 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 1.704ms
+2025-03-24 00:18:24.652 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:18:24.653 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.3296ms
+2025-03-24 00:18:25.866 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:18:25.878 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.4337ms
+2025-03-24 00:19:07.554 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - application/json 129
+2025-03-24 00:19:07.554 +07:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:19:07.554 +07:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-03-24 00:19:07.554 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - 405 0 null 0.8197ms
+2025-03-24 00:26:48.810 +07:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:26:48.922 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:26:48.999 +07:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:26:49.150 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:26:49.188 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:26:49.192 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:26:49.210 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:26:49.237 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:26:49.251 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:26:49.364 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:26:49.364 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:26:49.365 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:26:49.371 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:26:49.375 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:26:49.376 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:26:49.377 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:26:49.378 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:26:49.381 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:26:49.792 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Quizzes] AS [q]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-03-24 00:26:49.980 +07:00 [INF] User profile is available. Using 'C:\Users\hungp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-24 00:26:50.175 +07:00 [INF] Now listening on: http://localhost:5269
+2025-03-24 00:26:50.181 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-24 00:26:50.182 +07:00 [INF] Hosting environment: Development
+2025-03-24 00:26:50.182 +07:00 [INF] Content root path: C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI
+2025-03-24 00:26:50.504 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:26:50.825 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 325.6356ms
+2025-03-24 00:26:50.860 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:26:50.865 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 4.6985ms
+2025-03-24 00:26:50.867 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:26:50.884 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 17.268ms
+2025-03-24 00:26:54.049 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:26:54.312 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 262.0444ms
+2025-03-24 00:27:26.772 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - application/json 130
+2025-03-24 00:27:26.775 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-03-24 00:27:26.790 +07:00 [INF] Executing endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:27:26.836 +07:00 [INF] Route matched with {action = "PrepareQuizForUser", controller = "Quiz"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PrepareQuizForUser(QuizApp.Business.ViewModels.PrepareQuizViewModel) on controller QuizApp.WebAPI.Controllers.QuizController (QuizApp.WebAPI).
+2025-03-24 00:27:26.896 +07:00 [INF] Preparing quiz for user: "0cde6b1c-550b-40d1-b2b5-5d081e197aa9", Quiz: "d0e18412-ddb3-4305-b813-1558bbc3ec8e"
+2025-03-24 00:27:27.034 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@__prepareQuizViewModel_QuizId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[Description], [q].[Duration], [q].[IsActive], [q].[ThumbnailUrl], [q].[Title]
+FROM [Quizzes] AS [q]
+WHERE [q].[Id] = @__prepareQuizViewModel_QuizId_0
+2025-03-24 00:27:27.117 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@__prepareQuizViewModel_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[ConcurrencyStamp], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__prepareQuizViewModel_UserId_0
+2025-03-24 00:27:27.264 +07:00 [WRN] Collection navigations are only considered null if their parent entity is null. Use 'Any' to check whether collection navigation 'Role.UserRoles' is empty.
+2025-03-24 00:27:27.346 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Name]
+FROM [AspNetRoles] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [a].[Id] = [u].[RoleId] AND [u].[UserId] = @__user_Id_0)
+2025-03-24 00:27:27.348 +07:00 [INF] Quiz "d0e18412-ddb3-4305-b813-1558bbc3ec8e" prepared successfully for user "0cde6b1c-550b-40d1-b2b5-5d081e197aa9".
+2025-03-24 00:27:27.485 +07:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 10), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserQuizz] ([QuizId], [UserId], [FinishAt], [Id], [QuizCode], [StartAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-03-24 00:27:27.512 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'QuizApp.WebAPI.Data.QuizAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:daeff978-a049-4e30-8b4f-1e9f0ef95958
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:daeff978-a049-4e30-8b4f-1e9f0ef95958
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-24 00:27:27.547 +07:00 [INF] Executed action QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI) in 705.2503ms
+2025-03-24 00:27:27.549 +07:00 [INF] Executed endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:27:27.552 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:daeff978-a049-4e30-8b4f-1e9f0ef95958
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at QuizApp.Business.Services.QuizService.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.Business\Services\QuizService.cs:line 448
+   at QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI\Controllers\QuizController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 00:27:27.605 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/prepareQuizForUser - 500 null text/plain; charset=utf-8 832.8257ms
+2025-03-24 00:29:00.059 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:29:00.062 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 2.5552ms
+2025-03-24 00:29:00.122 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:29:00.133 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:29:00.135 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 12.1887ms
+2025-03-24 00:29:00.141 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 14.9006ms
+2025-03-24 00:29:02.404 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:29:02.429 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.0402ms
+2025-03-24 00:29:13.379 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:29:13.381 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.4469ms
+2025-03-24 00:29:13.463 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:29:13.464 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:29:13.465 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.8251ms
+2025-03-24 00:29:13.468 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 5.3823ms
+2025-03-24 00:29:15.467 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:29:15.506 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 38.8683ms
+2025-03-24 00:29:50.637 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:29:50.639 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 2.1944ms
+2025-03-24 00:29:50.793 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:29:50.799 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 3.9951ms
+2025-03-24 00:29:50.870 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:29:50.871 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.8933ms
+2025-03-24 00:29:54.299 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:29:54.314 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.8235ms
+2025-03-24 00:30:57.313 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:30:57.315 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.5572ms
+2025-03-24 00:30:57.346 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:30:57.349 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 3.3098ms
+2025-03-24 00:30:57.355 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:30:57.356 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.8044ms
+2025-03-24 00:31:00.762 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:31:00.775 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.2462ms
+2025-03-24 00:31:09.215 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:31:09.217 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.2512ms
+2025-03-24 00:31:09.235 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:31:09.238 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:31:09.240 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 1.3035ms
+2025-03-24 00:31:09.241 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 6.0561ms
+2025-03-24 00:31:10.830 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:31:10.842 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.1111ms
+2025-03-24 00:34:47.966 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:34:47.967 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.0395ms
+2025-03-24 00:34:48.022 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:34:48.022 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:34:48.022 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.4954ms
+2025-03-24 00:34:48.023 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 1.4382ms
+2025-03-24 00:34:50.131 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:34:50.142 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.75ms
+2025-03-24 00:35:23.796 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:35:23.797 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 0.6034ms
+2025-03-24 00:35:23.803 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:35:23.804 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.5297ms
+2025-03-24 00:35:23.831 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:35:23.831 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:35:23.832 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.3055ms
+2025-03-24 00:35:23.837 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 6.207ms
+2025-03-24 00:35:25.582 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:35:25.593 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.8166ms
+2025-03-24 00:35:29.834 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:35:29.835 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 0.8192ms
+2025-03-24 00:35:29.848 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:35:29.849 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.4749ms
+2025-03-24 00:35:29.855 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:35:29.856 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 1.2019ms
+2025-03-24 00:35:30.119 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:35:30.128 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.9485ms
+2025-03-24 00:38:28.800 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:38:28.801 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 0.9927ms
+2025-03-24 00:38:28.835 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:38:28.836 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 1.0152ms
+2025-03-24 00:38:28.853 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:38:28.853 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.6423ms
+2025-03-24 00:38:32.742 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:38:32.776 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.9166ms
+2025-03-24 00:39:07.353 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - application/json 132
+2025-03-24 00:39:07.355 +07:00 [INF] Executing endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:39:07.368 +07:00 [INF] Route matched with {action = "PrepareQuizForUser", controller = "Quiz"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PrepareQuizForUser(QuizApp.Business.ViewModels.PrepareQuizViewModel) on controller QuizApp.WebAPI.Controllers.QuizController (QuizApp.WebAPI).
+2025-03-24 00:39:07.389 +07:00 [INF] Preparing quiz for user: "31169d5e-5cf5-4100-a15d-4100dc23dabc", Quiz: "d0e18412-ddb3-4305-b813-1558bbc3ec8e"
+2025-03-24 00:39:07.418 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@__prepareQuizViewModel_QuizId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[Description], [q].[Duration], [q].[IsActive], [q].[ThumbnailUrl], [q].[Title]
+FROM [Quizzes] AS [q]
+WHERE [q].[Id] = @__prepareQuizViewModel_QuizId_0
+2025-03-24 00:39:07.425 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__prepareQuizViewModel_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[ConcurrencyStamp], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__prepareQuizViewModel_UserId_0
+2025-03-24 00:39:07.437 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Name]
+FROM [AspNetRoles] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [UserRoles] AS [u]
+    WHERE [a].[Id] = [u].[RoleId] AND [u].[UserId] = @__user_Id_0)
+2025-03-24 00:39:07.438 +07:00 [INF] Quiz "d0e18412-ddb3-4305-b813-1558bbc3ec8e" prepared successfully for user "31169d5e-5cf5-4100-a15d-4100dc23dabc".
+2025-03-24 00:39:07.442 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 10), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserQuizz] ([QuizId], [UserId], [FinishAt], [Id], [QuizCode], [StartAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-03-24 00:39:07.446 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'QuizApp.WebAPI.Data.QuizAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b6671834-e065-4382-b229-e94bc19a2d21
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b6671834-e065-4382-b229-e94bc19a2d21
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-24 00:39:07.453 +07:00 [INF] Executed action QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI) in 84.9751ms
+2025-03-24 00:39:07.454 +07:00 [INF] Executed endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:39:07.455 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b6671834-e065-4382-b229-e94bc19a2d21
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at QuizApp.Business.Services.QuizService.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.Business\Services\QuizService.cs:line 448
+   at QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 00:39:07.471 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - 500 null text/plain; charset=utf-8 117.1183ms
+2025-03-24 00:40:09.867 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:40:09.870 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 2.7948ms
+2025-03-24 00:40:09.940 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:40:09.944 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 3.7205ms
+2025-03-24 00:40:09.989 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:40:09.989 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:40:09.989 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.3649ms
+2025-03-24 00:40:09.991 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 2.2616ms
+2025-03-24 00:40:11.362 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:40:11.437 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 75.5336ms
+2025-03-24 00:41:21.861 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:41:21.876 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 14.6666ms
+2025-03-24 00:41:22.129 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:41:22.133 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 4.6934ms
+2025-03-24 00:41:22.134 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:41:22.134 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.6066ms
+2025-03-24 00:41:24.270 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:41:24.292 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.2146ms
+2025-03-24 00:42:50.282 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:42:50.283 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 0.7884ms
+2025-03-24 00:42:50.334 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:42:50.335 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 1.3119ms
+2025-03-24 00:42:50.336 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:42:50.337 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.8195ms
+2025-03-24 00:42:52.772 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:42:52.781 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.1565ms
+2025-03-24 00:43:18.738 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - application/json 131
+2025-03-24 00:43:18.739 +07:00 [INF] Executing endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:43:18.742 +07:00 [INF] Route matched with {action = "PrepareQuizForUser", controller = "Quiz"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PrepareQuizForUser(QuizApp.Business.ViewModels.PrepareQuizViewModel) on controller QuizApp.WebAPI.Controllers.QuizController (QuizApp.WebAPI).
+2025-03-24 00:43:18.750 +07:00 [INF] Preparing quiz for user: "31169d5e-5cf5-4100-a15d-4100dc23dabc", Quiz: "d0e18412-ddb3-4305-b813-1558bbc3ec8e"
+2025-03-24 00:43:18.757 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__prepareQuizViewModel_QuizId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[Description], [q].[Duration], [q].[IsActive], [q].[ThumbnailUrl], [q].[Title]
+FROM [Quizzes] AS [q]
+WHERE [q].[Id] = @__prepareQuizViewModel_QuizId_0
+2025-03-24 00:43:18.761 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__prepareQuizViewModel_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[ConcurrencyStamp], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__prepareQuizViewModel_UserId_0
+2025-03-24 00:43:18.768 +07:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 10), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserQuizz] ([QuizId], [UserId], [FinishAt], [Id], [QuizCode], [StartAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-03-24 00:43:18.769 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'QuizApp.WebAPI.Data.QuizAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b6671834-e065-4382-b229-e94bc19a2d21
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b6671834-e065-4382-b229-e94bc19a2d21
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-24 00:43:18.774 +07:00 [INF] Executed action QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI) in 31.5938ms
+2025-03-24 00:43:18.774 +07:00 [INF] Executed endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:43:18.775 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'UserQuizz'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b6671834-e065-4382-b229-e94bc19a2d21
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at QuizApp.Business.Services.QuizService.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel)
+   at QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 00:43:18.781 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - 500 null text/plain; charset=utf-8 43.0955ms
+2025-03-24 00:47:38.093 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:47:38.094 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 0.817ms
+2025-03-24 00:47:38.128 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:47:38.128 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 0.3485ms
+2025-03-24 00:47:38.131 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:47:38.132 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.9225ms
+2025-03-24 00:47:39.788 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:47:39.795 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.1929ms
+2025-03-24 00:51:03.512 +07:00 [INF] Application is shutting down...
+2025-03-24 00:54:05.452 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:54:05.510 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:54:05.554 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:54:05.642 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:54:05.659 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:54:05.661 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:54:05.670 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:54:05.683 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:54:05.691 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:54:05.779 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:54:05.779 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 00:54:05.780 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 00:54:05.785 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 00:54:05.788 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 00:54:05.790 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 00:54:05.791 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 00:54:05.791 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 00:54:05.793 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 00:54:06.020 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Quizzes] AS [q]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-03-24 00:54:06.110 +07:00 [INF] User profile is available. Using 'C:\Users\hungp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-24 00:54:06.192 +07:00 [INF] Now listening on: http://localhost:5269
+2025-03-24 00:54:06.195 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-24 00:54:06.195 +07:00 [INF] Hosting environment: Development
+2025-03-24 00:54:06.195 +07:00 [INF] Content root path: C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI
+2025-03-24 00:54:06.447 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 00:54:06.668 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 223.9804ms
+2025-03-24 00:54:06.695 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 00:54:06.700 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 00:54:06.700 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 4.5853ms
+2025-03-24 00:54:06.705 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 5.2191ms
+2025-03-24 00:54:08.602 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 00:54:08.801 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 199.2066ms
+2025-03-24 00:54:44.435 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - application/json 130
+2025-03-24 00:54:44.437 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-03-24 00:54:44.463 +07:00 [INF] Executing endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:54:44.484 +07:00 [INF] Route matched with {action = "PrepareQuizForUser", controller = "Quiz"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PrepareQuizForUser(QuizApp.Business.ViewModels.PrepareQuizViewModel) on controller QuizApp.WebAPI.Controllers.QuizController (QuizApp.WebAPI).
+2025-03-24 00:54:44.541 +07:00 [INF] Preparing quiz for user: "0cde6b1c-550b-40d1-b2b5-5d081e197aa9", Quiz: "d0e18412-ddb3-4305-b813-1558bbc3ec8e"
+2025-03-24 00:54:44.680 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[@__prepareQuizViewModel_QuizId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[Description], [q].[Duration], [q].[IsActive], [q].[ThumbnailUrl], [q].[Title]
+FROM [Quizzes] AS [q]
+WHERE [q].[Id] = @__prepareQuizViewModel_QuizId_0
+2025-03-24 00:54:44.744 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__prepareQuizViewModel_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[ConcurrencyStamp], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__prepareQuizViewModel_UserId_0
+2025-03-24 00:54:44.943 +07:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 10), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserQuizz] ([QuizId], [UserId], [FinishAt], [Id], [QuizCode], [StartAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-03-24 00:54:44.960 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'QuizApp.WebAPI.Data.QuizAppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_UserQuizz'. Cannot insert duplicate key in object 'dbo.UserQuizz'. The duplicate key value is (0cde6b1c-550b-40d1-b2b5-5d081e197aa9, d0e18412-ddb3-4305-b813-1558bbc3ec8e).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:11c4bddc-2b7e-431a-b904-373cb22583ea
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_UserQuizz'. Cannot insert duplicate key in object 'dbo.UserQuizz'. The duplicate key value is (0cde6b1c-550b-40d1-b2b5-5d081e197aa9, d0e18412-ddb3-4305-b813-1558bbc3ec8e).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:11c4bddc-2b7e-431a-b904-373cb22583ea
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-24 00:54:44.970 +07:00 [INF] Executed action QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI) in 482.3985ms
+2025-03-24 00:54:44.970 +07:00 [INF] Executed endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 00:54:44.975 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_UserQuizz'. Cannot insert duplicate key in object 'dbo.UserQuizz'. The duplicate key value is (0cde6b1c-550b-40d1-b2b5-5d081e197aa9, d0e18412-ddb3-4305-b813-1558bbc3ec8e).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:11c4bddc-2b7e-431a-b904-373cb22583ea
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at QuizApp.Business.Services.QuizService.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.Business\Services\QuizService.cs:line 419
+   at QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI\Controllers\QuizController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 00:54:45.014 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - 500 null text/plain; charset=utf-8 578.5866ms
+2025-03-24 01:00:39.619 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 01:00:39.620 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 1.4598ms
+2025-03-24 01:00:39.651 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 01:00:39.652 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 1.1516ms
+2025-03-24 01:00:39.711 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 01:00:39.712 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 0.625ms
+2025-03-24 01:00:41.734 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 01:00:41.760 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.6994ms
+2025-03-24 01:02:19.023 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - application/json 129
+2025-03-24 01:02:19.025 +07:00 [INF] Executing endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 01:02:19.032 +07:00 [INF] Route matched with {action = "PrepareQuizForUser", controller = "Quiz"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PrepareQuizForUser(QuizApp.Business.ViewModels.PrepareQuizViewModel) on controller QuizApp.WebAPI.Controllers.QuizController (QuizApp.WebAPI).
+2025-03-24 01:02:19.043 +07:00 [INF] Preparing quiz for user: "31169d5e-5cf5-4100-a15d-4100dc23dabc", Quiz: "0f1adf47-8be0-4899-8df5-4fcf2fbfe635"
+2025-03-24 01:02:19.060 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__prepareQuizViewModel_QuizId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[Description], [q].[Duration], [q].[IsActive], [q].[ThumbnailUrl], [q].[Title]
+FROM [Quizzes] AS [q]
+WHERE [q].[Id] = @__prepareQuizViewModel_QuizId_0
+2025-03-24 01:02:19.065 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__prepareQuizViewModel_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[ConcurrencyStamp], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__prepareQuizViewModel_UserId_0
+2025-03-24 01:02:19.079 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Guid), @__quiz_Id_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[QuizId], [u].[FinishAt], [u].[Id], [u].[QuizCode], [u].[StartAt]
+FROM [UserQuizz] AS [u]
+WHERE [u].[UserId] = @__user_Id_0 AND [u].[QuizId] = @__quiz_Id_1
+2025-03-24 01:02:19.085 +07:00 [INF] Executed action QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI) in 53.0596ms
+2025-03-24 01:02:19.085 +07:00 [INF] Executed endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 01:02:19.085 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The instance of entity type 'UserQuizz' cannot be tracked because another instance with the same key value for {'UserId', 'QuizId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, Nullable`1 fallbackState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at QuizApp.Business.Services.QuizService.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel)
+   at QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI\Controllers\QuizController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 01:02:19.088 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - 500 null text/plain; charset=utf-8 64.7728ms
+2025-03-24 01:10:15.660 +07:00 [INF] Application is shutting down...
+2025-03-24 01:26:23.292 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 01:26:23.332 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 01:26:23.354 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 01:26:23.423 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 01:26:23.432 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 01:26:23.435 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 01:26:23.442 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 01:26:23.453 +07:00 [INF] Applying migration '20250323182531_FixRelations'.
+2025-03-24 01:26:23.504 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetRoleClaims] DROP CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId];
+2025-03-24 01:26:23.509 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetUserRoles] DROP CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId];
+2025-03-24 01:26:23.513 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [RoleUser] DROP CONSTRAINT [FK_RoleUser_AspNetRoles_RolesId];
+2025-03-24 01:26:23.520 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAnswers] DROP CONSTRAINT [FK_UserAnswers_Quizzes_QuizId];
+2025-03-24 01:26:23.524 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAnswers] DROP CONSTRAINT [FK_UserAnswers_UserQuizz_UserId_QuizId];
+2025-03-24 01:26:23.535 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [UserQuizz];
+2025-03-24 01:26:23.545 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [UserRoles];
+2025-03-24 01:26:23.557 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAnswers] DROP CONSTRAINT [PK_UserAnswers];
+2025-03-24 01:26:23.562 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX [IX_UserAnswers_QuizId] ON [UserAnswers];
+2025-03-24 01:26:23.566 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX [IX_UserAnswers_UserId_QuizId] ON [UserAnswers];
+2025-03-24 01:26:23.574 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetRoles] DROP CONSTRAINT [PK_AspNetRoles];
+2025-03-24 01:26:23.619 +07:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var sysname;
+SELECT @var = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[UserAnswers]') AND [c].[name] = N'UserQuizId');
+IF @var IS NOT NULL EXEC(N'ALTER TABLE [UserAnswers] DROP CONSTRAINT [' + @var + '];');
+ALTER TABLE [UserAnswers] DROP COLUMN [UserQuizId];
+2025-03-24 01:26:23.831 +07:00 [INF] Executed DbCommand (210ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[AspNetRoles]', N'Roles', 'OBJECT';
+2025-03-24 01:26:23.837 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetUserRoles] ADD [Discriminator] nvarchar(34) NOT NULL DEFAULT N'';
+2025-03-24 01:26:23.841 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAnswers] ADD CONSTRAINT [PK_UserAnswers] PRIMARY KEY ([UserId], [QuizId], [AnswerId], [QuestionId]);
+2025-03-24 01:26:23.846 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Roles] ADD CONSTRAINT [PK_Roles] PRIMARY KEY ([Id]);
+2025-03-24 01:26:23.851 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserQuizzes] (
+    [UserId] uniqueidentifier NOT NULL,
+    [QuizId] uniqueidentifier NOT NULL,
+    [QuizCode] nvarchar(10) NOT NULL,
+    [StartAt] datetime2 NULL,
+    [FinishAt] datetime2 NULL,
+    [Id] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_UserQuizzes] PRIMARY KEY ([UserId], [QuizId]),
+    CONSTRAINT [FK_UserQuizzes_Quizzes_QuizId] FOREIGN KEY ([QuizId]) REFERENCES [Quizzes] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserQuizzes_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);
+2025-03-24 01:26:23.855 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserQuizzes_QuizId] ON [UserQuizzes] ([QuizId]);
+2025-03-24 01:26:23.859 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetRoleClaims] ADD CONSTRAINT [FK_AspNetRoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE;
+2025-03-24 01:26:23.865 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetUserRoles] ADD CONSTRAINT [FK_AspNetUserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE;
+2025-03-24 01:26:23.867 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [RoleUser] ADD CONSTRAINT [FK_RoleUser_Roles_RolesId] FOREIGN KEY ([RolesId]) REFERENCES [Roles] ([Id]) ON DELETE CASCADE;
+2025-03-24 01:26:23.871 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [UserAnswers] ADD CONSTRAINT [FK_UserAnswers_UserQuizzes_UserId_QuizId] FOREIGN KEY ([UserId], [QuizId]) REFERENCES [UserQuizzes] ([UserId], [QuizId]) ON DELETE CASCADE;
+2025-03-24 01:26:23.875 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250323182531_FixRelations', N'9.0.3');
+2025-03-24 01:26:23.883 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 01:27:22.523 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 01:27:22.588 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 01:27:22.626 +07:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 01:27:22.713 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 01:27:22.737 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 01:27:22.739 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 01:27:22.766 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 01:27:22.782 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 01:27:22.788 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 01:27:22.857 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 01:27:22.858 +07:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-03-24 01:27:22.860 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-03-24 01:27:22.865 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-03-24 01:27:22.868 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-03-24 01:27:22.869 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-03-24 01:27:22.871 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-03-24 01:27:22.872 +07:00 [INF] No migrations were applied. The database is already up to date.
+2025-03-24 01:27:22.874 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-03-24 01:27:23.139 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Quizzes] AS [q]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-03-24 01:27:23.323 +07:00 [INF] User profile is available. Using 'C:\Users\hungp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-24 01:27:23.470 +07:00 [INF] Now listening on: http://localhost:5269
+2025-03-24 01:27:23.473 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-24 01:27:23.474 +07:00 [INF] Hosting environment: Development
+2025-03-24 01:27:23.474 +07:00 [INF] Content root path: C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI
+2025-03-24 01:27:23.772 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.html - null null
+2025-03-24 01:27:23.961 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.html - 200 null text/html;charset=utf-8 191.8595ms
+2025-03-24 01:27:23.989 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-24 01:27:23.989 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/index.js - null null
+2025-03-24 01:27:23.992 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 2.9731ms
+2025-03-24 01:27:23.994 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/index.js - 200 null application/javascript;charset=utf-8 4.7689ms
+2025-03-24 01:27:25.512 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - null null
+2025-03-24 01:27:25.671 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 159.0032ms
+2025-03-24 01:28:59.771 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - application/json 130
+2025-03-24 01:28:59.773 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-03-24 01:28:59.796 +07:00 [INF] Executing endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 01:28:59.816 +07:00 [INF] Route matched with {action = "PrepareQuizForUser", controller = "Quiz"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PrepareQuizForUser(QuizApp.Business.ViewModels.PrepareQuizViewModel) on controller QuizApp.WebAPI.Controllers.QuizController (QuizApp.WebAPI).
+2025-03-24 01:28:59.867 +07:00 [INF] Preparing quiz for user: "31169d5e-5cf5-4100-a15d-4100dc23dabc", Quiz: "0f1adf47-8be0-4899-8df5-4fcf2fbfe635"
+2025-03-24 01:28:59.976 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@__prepareQuizViewModel_QuizId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[Description], [q].[Duration], [q].[IsActive], [q].[ThumbnailUrl], [q].[Title]
+FROM [Quizzes] AS [q]
+WHERE [q].[Id] = @__prepareQuizViewModel_QuizId_0
+2025-03-24 01:29:00.035 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__prepareQuizViewModel_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[ConcurrencyStamp], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__prepareQuizViewModel_UserId_0
+2025-03-24 01:29:00.134 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Guid), @__quiz_Id_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[QuizId], [u].[FinishAt], [u].[Id], [u].[QuizCode], [u].[StartAt]
+FROM [UserQuizzes] AS [u]
+WHERE [u].[UserId] = @__user_Id_0 AND [u].[QuizId] = @__quiz_Id_1
+2025-03-24 01:29:00.142 +07:00 [INF] Executed action QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI) in 323.3054ms
+2025-03-24 01:29:00.143 +07:00 [INF] Executed endpoint 'QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser (QuizApp.WebAPI)'
+2025-03-24 01:29:00.145 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The instance of entity type 'UserQuizz' cannot be tracked because another instance with the same key value for {'UserId', 'QuizId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, Nullable`1 fallbackState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at QuizApp.Business.Services.QuizService.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.Business\Services\QuizService.cs:line 424
+   at QuizApp.WebAPI.Controllers.QuizController.PrepareQuizForUser(PrepareQuizViewModel prepareQuizViewModel) in C:\Users\hungp\Fsoft\ASP.NET CORE\web\api\QuizApp.WebAPI\Controllers\QuizController.cs:line 21
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-03-24 01:29:00.182 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5269/api/Quiz/prepareQuizForUser - 500 null text/plain; charset=utf-8 411.2812ms
+2025-03-24 01:33:08.696 +07:00 [INF] Application is shutting down...

@@ -26,7 +26,7 @@ public class Quiz : IBaseEntity
     public required bool IsActive { get; set; } = true;
 
     // Relationship N:N with User
-    public ICollection<UserQuiz> UserQuizzes { get; set; } = [];
+    public ICollection<UserQuizz> UserQuizzes { get; set; } = [];
 
     public ICollection<QuizQuestion> QuizQuestions { get; set; } = [];
 

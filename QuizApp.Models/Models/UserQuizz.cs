@@ -4,7 +4,7 @@ using QuizApp.Models.Models;
 
 namespace QuizApp.WebAPI.Models;
 
-public class UserQuiz : BaseEntity
+public class UserQuizz : BaseEntity
 {
     [Required]
     [ForeignKey(nameof(User))]

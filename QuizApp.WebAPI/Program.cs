@@ -30,6 +30,9 @@ builder.Services.AddScoped<IRoleService, RoleService>();
 // Register Service for Quesion
 builder.Services.AddScoped<IQuestionService, QuestionService>();
 
+// Register Service for Quiz
+builder.Services.AddScoped<IQuizService, QuizService>();
+
 // Register QuestionController
 builder.Services.AddControllers();
 
@@ -79,6 +82,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
 app.UseAuthorization();
+
 app.MapControllers();
 await app.RunAsync();

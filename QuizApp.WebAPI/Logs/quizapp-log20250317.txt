@@ -802,3 +802,4 @@ FROM [Questions] AS [q]
 2025-03-17 01:07:39.969 +07:00 [INF] Executed action QuizApp.WebAPI.Controllers.QuestionController.GetAllQuestions (QuizApp.WebAPI) in 8.3821ms
 2025-03-17 01:07:39.969 +07:00 [INF] Executed endpoint 'QuizApp.WebAPI.Controllers.QuestionController.GetAllQuestions (QuizApp.WebAPI)'
 2025-03-17 01:07:39.970 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5269/api/Question/all - 200 null application/json; charset=utf-8 9.7838ms
+2025-03-17 01:08:43.704 +07:00 [INF] Application is shutting down...

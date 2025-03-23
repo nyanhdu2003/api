@@ -10,22 +10,16 @@ public class UserAnswer : BaseEntity
     public required Guid UserId { get; set; }
 
     [Required]
-    public required Guid UserQuizId { get; set; }
+    public required Guid QuizId { get; set; }
 
     [ForeignKey("UserId, QuizId")]
-    public UserQuiz? UserQuiz { get; set; }
+    public UserQuizz? UserQuizz { get; set; }
 
     [Required]
     [ForeignKey(nameof(Answer))]
     public required Guid AnswerId { get; set; }
 
     public Answer? Answer { get; set; }
-
-    [Required]
-    [ForeignKey(nameof(Quiz))]
-    public required Guid QuizId { get; set; }
-
-    public Quiz? Quiz { get; set; }
 
     [Required]
     [ForeignKey(nameof(Question))]

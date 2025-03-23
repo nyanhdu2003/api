@@ -20,7 +20,7 @@ public class UnitOfWork : IUnitOfWork
         // Khởi tạo các repository cụ thể
         QuizRepository = new GenericRepository<Quiz>(_context);
         QuestionRepository = new GenericRepository<Question>(_context);
-        UserQuizRepository = new GenericRepository<UserQuiz>(_context);
+        UserQuizRepository = new GenericRepository<UserQuizz>(_context);
         QuizQuestionRepository = new GenericRepository<QuizQuestion>(_context);
         UserAnswerRepository = new GenericRepository<UserAnswer>(_context);
         UserRepository = new GenericRepository<User>(_context);
@@ -33,7 +33,7 @@ public class UnitOfWork : IUnitOfWork
     // Implement các repository
     public IGenericRepository<Quiz> QuizRepository { get; }
     public IGenericRepository<Question> QuestionRepository { get; }
-    public IGenericRepository<UserQuiz> UserQuizRepository { get; }
+    public IGenericRepository<UserQuizz> UserQuizRepository { get; }
     public IGenericRepository<QuizQuestion> QuizQuestionRepository { get; }
     public IGenericRepository<UserAnswer> UserAnswerRepository { get; }
     public IGenericRepository<User> UserRepository { get; }
