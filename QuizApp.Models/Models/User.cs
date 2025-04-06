@@ -15,9 +15,8 @@ public class User : IdentityUser<Guid>, IBaseEntity
     [StringLength(50, MinimumLength = 3)]
     public required string LastName { get; set; }
 
-    [Required]
     [NotMapped]
-    public required string DisplayName { get; set; }
+    public string? DisplayName { get; set; }
 
     [Required]
     [CustomValidation(typeof(User), nameof(ValidateDateOfBirth))]

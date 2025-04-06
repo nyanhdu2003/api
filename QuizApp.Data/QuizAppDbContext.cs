@@ -29,14 +29,14 @@ namespace QuizApp.WebAPI.Data
             builder.Entity<Answer>().ToTable("Answers");
             builder.Entity<UserQuizz>().ToTable("UserQuizzes");
 
-            // ✅ Cấu hình Answer - Question (1:N)
+            // Cấu hình Answer - Question (1:N)
             builder.Entity<Answer>()
                 .HasOne(a => a.Question)
                 .WithMany(q => q.Answers)
                 .HasForeignKey(a => a.QuestionId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // ✅ Cấu hình Many-to-Many giữa User và Quiz thông qua UserQuizz
+            // Cấu hình Many-to-Many giữa User và Quiz thông qua UserQuizz
             builder.Entity<UserQuizz>()
                 .HasKey(uc => new { uc.UserId, uc.QuizId });
 
@@ -52,7 +52,7 @@ namespace QuizApp.WebAPI.Data
                 .HasForeignKey(uc => uc.QuizId)
                 .OnDelete(DeleteBehavior.Restrict); // Ngăn vòng lặp xóa
 
-            // ✅ Cấu hình UserAnswer
+            // Cấu hình UserAnswer
             builder.Entity<UserAnswer>()
                 .HasKey(ua => new { ua.UserId, ua.QuizId, ua.AnswerId, ua.QuestionId }); // Đặt khóa chính đúng
 
@@ -74,7 +74,7 @@ namespace QuizApp.WebAPI.Data
                 .HasForeignKey(ua => ua.AnswerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // ✅ Cấu hình Many-to-Many giữa Quiz và Question thông qua QuizQuestion
+            // Cấu hình Many-to-Many giữa Quiz và Question thông qua QuizQuestion
             builder.Entity<QuizQuestion>()
                 .HasKey(x => new { x.QuizId, x.QuestionId });
 
@@ -90,7 +90,7 @@ namespace QuizApp.WebAPI.Data
                 .HasForeignKey(qq => qq.QuestionId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // ✅ Cấu hình UserRoles (Many-to-Many giữa User và Role)
+            // Cấu hình UserRoles (Many-to-Many giữa User và Role)
             builder.Entity<UserRoles>()
                 .HasBaseType<IdentityUserRole<Guid>>(); // Kế thừa đúng từ IdentityUserRole<Guid>
 

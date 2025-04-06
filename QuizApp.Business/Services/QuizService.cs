@@ -438,9 +438,8 @@ public class QuizService : IQuizService
             FirstName = user.FirstName,
             LastName = user.LastName,
             Email = user.Email,
-            DisplayName = user.DisplayName,
+            DisplayName = user.DisplayName ?? string.Empty,
             PhoneNumber = user.PhoneNumber,
-            DateOfBirth = user.DateOfBirth,
             Avatar = user.Avatar,
             IsActive = user.IsActive,
             Roles = await _context.Roles
