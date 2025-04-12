@@ -5,6 +5,7 @@ using QuizApp.Data.Repositories;
 using QuizApp.WebAPI.Data;
 using QuizApp.WebAPI.Models;
 using QuizApp.WebAPI.SeedData;
+using QuizApp.WebAPI.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

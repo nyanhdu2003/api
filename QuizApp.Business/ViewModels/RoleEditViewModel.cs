@@ -1,6 +1,6 @@
-namespace QuizApp.Business.ViewModels;
+namespace QuizApp.Business.Services;
 
-public class RoleViewModel
+public class RoleEditViewModel
 {
     public Guid Id { get; set; }
     public string? Name { get; set; }

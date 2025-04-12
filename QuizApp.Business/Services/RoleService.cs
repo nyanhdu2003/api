@@ -1,52 +1,80 @@
 using Microsoft.AspNetCore.Identity;
-using QuizApp.Models.Models;
-using QuizApp.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
+using QuizApp.Business.Services;
+using QuizApp.Business.ViewModels;
 using QuizApp.WebAPI.Models;
 
-namespace QuizApp.Business.Services
+namespace QuizApp.WebAPI.Services
 {
     public class RoleService : IRoleService
     {
         private readonly RoleManager<Role> _roleManager;
-        private readonly IRoleRepository _roleRepository;
 
-        private readonly UserManager<User> _userManager;
-
-        public RoleService(RoleManager<Role> roleManager, IRoleRepository roleRepository, UserManager<User> userManager)
+        public RoleService(RoleManager<Role> roleManager)
         {
             _roleManager = roleManager;
-            _roleRepository = roleRepository;
-            _userManager = userManager;
         }
 
-        public async Task<IdentityResult> CreateRoleAsync(Role role)
+        public async Task<RoleViewModel> GetRoleById(Guid id)
         {
-            return await _roleManager.CreateAsync(role);
-        }
+            var role = await _roleManager.Roles.FirstOrDefaultAsync(r => r.Id == id);
+            if (role == null) return null;
 
-        public async Task<bool> RoleExistsAsync(string roleName)
-        {
-            return await _roleManager.RoleExistsAsync(roleName);
-        }
-
-        public async Task<IdentityResult> AssignRoleToUserAsync(Guid userId, string roleName)
-        {
-            // Tìm user theo ID
-            var user = await _userManager.FindByIdAsync(userId.ToString());
-            if (user == null)
+            return new RoleViewModel
             {
-                throw new KeyNotFoundException("User not found.");
-            }
+                Id = role.Id,
+                Name = role.Name,
+                Description = role.Description,
+                IsActive = role.IsActive
+            };
+        }
 
-            // Kiểm tra role có tồn tại không
-            var roleExists = await _roleManager.RoleExistsAsync(roleName);
-            if (!roleExists)
+        public async Task<List<RoleViewModel>> GetAllRoles()
+        {
+            return await _roleManager.Roles
+                .Select(r => new RoleViewModel
+                {
+                    Id = r.Id,
+                    Name = r.Name,
+                    Description = r.Description,
+                    IsActive = r.IsActive
+                })
+                .ToListAsync();
+        }
+
+        public async Task<bool> CreateNewRole(RoleCreateViewModel roleCreateViewModel)
+        {
+            var newRole = new Role
             {
-                throw new KeyNotFoundException("Role not found.");
-            }
+                Name = roleCreateViewModel.Name,
+                Description = roleCreateViewModel.Description ?? string.Empty,
+                IsActive = roleCreateViewModel.IsActive
+            };
 
-            // Gán role cho user
-            return await _userManager.AddToRoleAsync(user, roleName);
+            var result = await _roleManager.CreateAsync(newRole);
+            return result.Succeeded;
+        }
+
+        public async Task<bool> UpdateRoleById(Guid id, RoleEditViewModel roleEditViewModel)
+        {
+            var role = await _roleManager.FindByIdAsync(id.ToString());
+            if (role == null) return false;
+
+            role.Name = roleEditViewModel.Name;
+            role.Description = roleEditViewModel.Description ?? string.Empty;
+            role.IsActive = roleEditViewModel.IsActive;
+
+            var result = await _roleManager.UpdateAsync(role);
+            return result.Succeeded;
+        }
+
+        public async Task<bool> DeleteRoleById(Guid id)
+        {
+            var role = await _roleManager.FindByIdAsync(id.ToString());
+            if (role == null) return false;
+
+            var result = await _roleManager.DeleteAsync(role);
+            return result.Succeeded;
         }
     }
 }

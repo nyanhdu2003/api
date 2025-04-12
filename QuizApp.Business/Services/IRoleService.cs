@@ -1,13 +1,16 @@
-using Microsoft.AspNetCore.Identity;
-using QuizApp.WebAPI.Models;
+using QuizApp.Business.ViewModels;
 
 namespace QuizApp.Business.Services;
 
 public interface IRoleService
 {
-    Task<IdentityResult> CreateRoleAsync(Role role);
+    Task<RoleViewModel> GetRoleById(Guid id);
 
-    Task<bool> RoleExistsAsync(string roleName);
+    Task<List<RoleViewModel>> GetAllRoles();
 
-    Task<IdentityResult> AssignRoleToUserAsync(Guid userId, string roleName);
+    Task<bool> CreateNewRole(RoleCreateViewModel roleCreateViewModel);
+
+    Task<bool> UpdateRoleById(Guid id, RoleEditViewModel roleEditViewModel);
+
+    Task<bool> DeleteRoleById(Guid id);
 }
